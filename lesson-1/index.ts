@@ -1,96 +1,95 @@
-
-
-let str:string;
-str = "Hello";
-
-let isLoad:boolean;
-isLoad = true;
-
-
-let num:number = 10;
-const app:any ="OK"
-
-let undef:undefined;
-undef = undefined;
-
-let nullValue:null;
-nullValue = null
-
-let unionId:string | number;
-unionId = "1234567890";
-unionId=122222;
-
-let sizes: "SM" | "MD" | "LG" | true |0;
-// console.log(sizes)
-sizes = 0
-
-let myOject:{
-    name: string,
-    age: number,
-    isSingle: boolean,
-    isStudent?: boolean | undefined,
+interface lang {
+  uz: string;
+  cyr: string;
+  ru: string;
 }
 
-myOject={
-    name: "John",
-    age: 30,
-    isSingle: true
-}
-// myOject.isStudent = false;
-
-console.log(myOject)
-
-let myArray:Array<number|string|boolean>;
-myArray = [1,2,3,4,5,6,7,8,9,10, true];
-let strs:any[] = ["a", "b", "c", "d", "e", "f",11];
-
-let arr=["TSC"]
-arr[0]="TS";
-
-
-console.log(arr)
-
-
-let tupleData:[boolean, string , number];
-tupleData=[true, "Hello", 0]
-
-
-function sum(w:number, x:number):number{
-    return w+x;
+interface images {
+  image: string;
 }
 
-const result:number=sum(1,4);
-
-const isAuth=(k:string,j:boolean):string=>{
-  return k+j;
+interface product {
+  name: lang;
+  category: string;
+  subCategory: string;
+  mainImage: string;
+  price: number;
+  isHaveColor: boolean;
+  images: images[];
+  deliveryInfo: lang;
+  propertyInfo: lang;
+  finalPriceInfo: lang;
+  popularInfo: lang;
+  packageCode: string;
 }
 
-function getToken():void{
-    console.log("this is auth")
+var order:product={
+  name: {
+    uz: "Divanlar va kreslolar",
+    cyr: "Диванлар ва креслолар",
+    ru: "Диваны и кресла"
+  },
+  category: "6564d1c2665dc0d8ac08222f",
+  subCategory: "65662be12d9cd235ac924aba",
+  mainImage:
+    "https://isku.com/wp-content/uploads/2023/05/isku-iki-3h-sohva-korotettu-selkanoja-500x500.jpg",
+  price: 12000000,
+  isHaveColor: true,
+  images: [
+    {
+      image:
+        "https://isku.com/wp-content/uploads/2023/05/isku-iki-3h-sohva-korotettu-selkanoja-500x500.jpg"
+    }
+  ],
+  deliveryInfo: {
+    uz: "Divanlar va kreslolar",
+    cyr: "Диванлар ва креслолар",
+    ru: "Диваны и кресла"
+  },
+  propertyInfo: {
+    uz: "Divanlar va kreslolar",
+    cyr: "Диванлар ва креслолар",
+    ru: "Диваны и кресла"
+  },
+  finalPriceInfo: {
+    uz: "Divanlar va kreslolar",
+    cyr: "Диванлар ва креслолар",
+    ru: "Диваны и кресла"
+  },
+  popularInfo: {
+    uz: "",
+    cyr: "",
+    ru: ""
+  },
+  packageCode: "213124154"
+};
+
+interface colors {
+  name: string;
+  color: string;
 }
 
-getToken();
-
-function newError():never{
-    throw new Error("this is error");
+interface sizes {
+  name: string;
 }
 
-newError()
+interface units {
+  title: string;
+  sizes: sizes[];
+}
 
-console.log(isAuth("Hello", false))
+type productInfo = {
+  name: string;
+  images: string[];
+  price: string;
+  shortDescription: string;
+  longDescription: string;
+  category: string;
+  subCategory: string;
+  brand: string;
+  count: number;
+  colors: colors[];
+  units: units;
+};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(order)

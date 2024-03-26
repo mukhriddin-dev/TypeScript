@@ -1,0 +1,12 @@
+{
+  "name": "lesson-2",
+  "version": "1.0.0",
+  "description": "- Generic Type - Enums - DOM",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsc index.ts -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ziyodbek",
+  "license": "ISC"
+}
